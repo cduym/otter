@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-	    <groupId>org.sonatype.oss</groupId>
-	    <artifactId>oss-parent</artifactId>
-	    <version>7</version>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
 	</parent>
 	<groupId>com.alibaba.otter</groupId>
 	<artifactId>otter.parent</artifactId>
@@ -17,7 +17,7 @@
 		<name>alibaba</name>
 		<url>http://www.alibaba.com</url>
 	</organization>
-	
+
 	<developers>
 		<developer>
 			<name>agapple</name>
@@ -38,20 +38,20 @@
 			<timezone>8</timezone>
 		</developer>
 	</developers>
-	
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 		</license>
 	</licenses>
-	
+
 	<scm>
-    <url>git@github.com:alibaba/otter.git</url>
-    <connection>scm:git:git@github.com:alibaba/otter.git</connection>
-    <developerConnection>scm:git:git@github.com:alibaba/otter.git</developerConnection>
+		<url>git@github.com:alibaba/otter.git</url>
+		<connection>scm:git:git@github.com:alibaba/otter.git</connection>
+		<developerConnection>scm:git:git@github.com:alibaba/otter.git</developerConnection>
 	</scm>
-	
+
 	<repositories>
 		<repository>
 			<id>java.net</id>
@@ -79,39 +79,39 @@
 			<url>http://jtester.googlecode.com/svn/m2/</url>
 		</repository>
 	</repositories>
-	
+
 	<properties>
-		<!--maven properties-->
-        <maven.test.skip>false</maven.test.skip>
-        <!-- compiler settings properties -->
-        <java_source_version>1.6</java_source_version>
-        <java_target_version>1.6</java_target_version>
+		<!--maven properties -->
+		<maven.test.skip>false</maven.test.skip>
+		<!-- compiler settings properties -->
+		<java_source_version>1.6</java_source_version>
+		<java_target_version>1.6</java_target_version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-version>3.1.2.RELEASE</spring-version>
 		<jetty_verion>8.1.7.v20120910</jetty_verion>
 		<otter_canal_version>1.0.8-SNAPSHOT</otter_canal_version>
 	</properties>
-	
+
 	<modules>
 		<module>shared</module>
 		<module>manager</module>
 		<module>node</module>
 	</modules>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<!-- commons -->
-            <dependency>
+			<dependency>
 				<groupId>commons-dbcp</groupId>
 				<artifactId>commons-dbcp</artifactId>
 				<version>1.4</version>
 			</dependency>
-            <dependency>
+			<dependency>
 				<groupId>commons-lang</groupId>
 				<artifactId>commons-lang</artifactId>
 				<version>2.6</version>
 			</dependency>
-            <dependency>
+			<dependency>
 				<groupId>commons-pool</groupId>
 				<artifactId>commons-pool</artifactId>
 				<version>1.5.4</version>
@@ -152,14 +152,26 @@
 				<artifactId>zookeeper</artifactId>
 				<version>3.4.5</version>
 				<exclusions>
-				  <exclusion>
+					<exclusion>
 						<groupId>org.slf4j</groupId>
 						<artifactId>slf4j-log4j12</artifactId>
-				  </exclusion>
-				  <exclusion>
+					</exclusion>
+					<exclusion>
 						<groupId>org.slf4j</groupId>
 						<artifactId>slf4j-api</artifactId>
-				  </exclusion>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.jmx</groupId>
+						<artifactId>jmxri</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.jdmk</groupId>
+						<artifactId>jmxtools</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.jms</groupId>
+						<artifactId>jms</artifactId>
+					</exclusion>
 				</exclusions>
 			</dependency>
 			<dependency>
@@ -173,7 +185,7 @@
 				<artifactId>mysql-connector-java</artifactId>
 				<version>5.1.12</version>
 			</dependency>
-            <!-- oracle -->
+			<!-- oracle -->
 			<dependency>
 				<groupId>com.oracle</groupId>
 				<artifactId>ojdbc14</artifactId>
@@ -181,52 +193,52 @@
 			</dependency>
 			<!-- spring -->
 			<dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+			<dependency>
 				<groupId>cglib</groupId>
 				<artifactId>cglib-nodep</artifactId>
 				<version>2.2</version>
 			</dependency>
 			<!-- log -->
-            <dependency>
+			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-core</artifactId>
 				<version>1.0.6</version>
@@ -246,12 +258,12 @@
 				<artifactId>slf4j-api</artifactId>
 				<version>1.6.0</version>
 			</dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
-                <scope>provided</scope>
-            </dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
 			<!-- test dependency -->
 			<dependency>
 				<groupId>org.jtester</groupId>
@@ -259,7 +271,7 @@
 				<version>1.1.8</version>
 				<scope>test</scope>
 			</dependency>
-            <dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.5</version>
@@ -267,7 +279,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -301,33 +313,33 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
+
 		<sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/.svn/</exclude>
-                </excludes>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/.svn/</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
 	</build>
-	
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>sonatype-nexus-snapshots</id>
